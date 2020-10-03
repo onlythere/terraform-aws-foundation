@@ -15,7 +15,7 @@ module "ebs-backup-policy" {
   ebs_target_tags         = "ebs-to-take-snapshot-name-ec2-volume"
   policy_name             = "One week of daily snapshots"
   policy_interval         = 24
-  policy_time             = ["23:45"]
+  policy_times            = ["23:45"]
   policy_copy_tags        = false
   policy_retain_rule      = 14
   policy_tags_to_add      = "${merge(map("Name", "${var.name}-dlm", "SnapshotCreator", "DLM lifecycle"))}"
