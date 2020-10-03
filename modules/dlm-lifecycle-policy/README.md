@@ -20,6 +20,6 @@ module "ebs-backup-policy" {
   policy_retain_rule      = 14
   policy_tags_to_add      = "${merge(map("Name", "${var.name}-dlm", "SnapshotCreator", "DLM lifecycle"))}"
   resource_type           = ["VOLUME"]
-  role_name               = "dlm-lifecycle-role"
+  iam_role_name           = "dlm-lifecycle-role"
 }
 ```
